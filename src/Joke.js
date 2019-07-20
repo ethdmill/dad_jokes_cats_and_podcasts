@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Button from 'react-bootstrap/Button'
 
 class Joke extends Component {
 
@@ -34,7 +33,7 @@ class Joke extends Component {
     console.log(this.state)
     return (
       <div>
-        <Button variant='primary' size='lg' onClick={this.getData}>Another Dad Joke!</Button>
+        <button onClick={this.getData}>Another Dad Joke!</button>
         <h2>{this.state.joke}</h2>
       </div>
     );

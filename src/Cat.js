@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Button from 'react-bootstrap/Button'
 
 class Cat extends Component {
 
@@ -23,7 +22,7 @@ class Cat extends Component {
   render() {
     return (
       <div>
-        <Button variant='primary' size='lg' onClick={this.getData}>More Cats Right Meow</Button>
+        <button onClick={this.getData}>More Cats Right Meow</button>
         <img src={this.state.cat} />
       </div>
     );
