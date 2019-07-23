@@ -1,5 +1,7 @@
+// Imports React capabilites
 import React, { Component } from 'react'
 
+// Class that contains Podcast component
 class Podcast extends Component {
 
   constructor() {
@@ -10,6 +12,7 @@ class Podcast extends Component {
     };
   }
 
+  // Asynchronous function that pulls data from API and sets the component state
   getData = async (e) => {
     const query = e.target.value
     const response = await fetch('http://api.porios.com/omnisearch?query=' + query)
@@ -20,6 +23,7 @@ class Podcast extends Component {
     })
   }
 
+  // Ensures that podcast data is found unless the searched string doesn't appear in any JSON data
   renderPodcast = (podcast) => {
     if (podcast) {
       return (
@@ -39,18 +43,21 @@ class Podcast extends Component {
     }
   }
 
+  // Renders JSX on the page that relies on API for content
   render() {
-    console.log(this.state)
     return (
-      <div>
+      <div className='text-center'>
         <form>
-          <input type='text' value={this.state.query} onChange={this.getData} placeholder='Find a podcast!' />
+          <input className='mt-5 text-center' type='text' value={this.state.query} onChange={this.getData} placeholder='Find a podcast!' />
         </form>
-        {this.renderPodcast(this.state.podcast)}
+        <div className="p-4 my-1">
+          {this.renderPodcast(this.state.podcast)}
+        </div>
       </div>
     );
   }
 
 }
 
+// Export statement allows component to be used via App.js
 export default Podcast;

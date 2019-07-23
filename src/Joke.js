@@ -1,5 +1,7 @@
+// Imports React capabilites
 import React, { Component } from 'react'
 
+// Class that contains Joke component
 class Joke extends Component {
 
   constructor() {
@@ -9,6 +11,7 @@ class Joke extends Component {
     };
   }
 
+  // Asynchronous function that pulls data from API and sets the component state
   getData = async () => {
 
     var myHeaders = new Headers({
@@ -25,20 +28,26 @@ class Joke extends Component {
     this.setState({ joke: jokeJSON.joke })
   }
 
+  // Waits for data to ensure it picks it up
   async componentDidMount() {
     return await this.getData()
   }
 
+  // Renders JSX on the page that relies on API for content
   render() {
-    console.log(this.state)
     return (
-      <div>
-        <button onClick={this.getData}>Another Dad Joke!</button>
-        <h2>{this.state.joke}</h2>
+      <div className='text-center'>
+        <div>
+          <button className='btn btn-primary mt-5' onClick={this.getData}>Another Dad Joke!</button>
+        </div>
+        <div>
+          <h2 className="p-4 my-3">{this.state.joke}</h2>
+        </div>
       </div>
     );
   }
 
 }
 
+// Export statement allows component to be used via App.js
 export default Joke;

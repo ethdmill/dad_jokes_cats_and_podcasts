@@ -1,9 +1,11 @@
+<!-- Normal HTML head data -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
 
+    <!-- CDN link to Bootstrap for easy styling -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,11 +15,16 @@
 
   </head>
 
+
   <body>
 
-    <div class='container' id="root"></div>
+    <!-- React content is rendered in this div, linked by root ID to index.js -->
+    <div id="root"></div>
 
-    <div>TEST DIV 2 PLEASE IGNORE</div>
+    <!-- Look at how classy this footer is -->
+    <footer class="fixed-bottom pb-1 pl-1">
+      &copy; 2019 Ethan Miller
+    </footer>
 
   </body>
 
